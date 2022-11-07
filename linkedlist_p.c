@@ -4,13 +4,13 @@
 typedef struct node {
     int number;
     struct node* p_next;
-} NODE;
+} ND;
 
 void main() {
-    NODE* p_head = NULL;
-    NODE* p_tail = NULL;
-    NODE* temp = NULL;
-    NODE* temp2 = NULL;
+    ND* p_head = NULL;
+    ND* p_tail = NULL;
+    ND* temp = NULL;
+    ND* temp2 = NULL;
     int input = 0;
     int sum = 0;
     int value = 0;
@@ -18,7 +18,7 @@ void main() {
     for(int i = 0; i < 5; i ++) {
         scanf("%d", &input);
         if(p_head == NULL) {
-        p_head = (NODE*)malloc(sizeof(NODE));
+        p_head = (ND*)malloc(sizeof(ND));
         p_head->number = input;
         p_head->p_next = NULL;
         p_tail = p_head;
@@ -26,7 +26,7 @@ void main() {
         sum += 1;
         }
         else if(p_head != NULL) {
-        p_tail->p_next = (NODE*)malloc(sizeof(NODE));
+        p_tail->p_next = (ND*)malloc(sizeof(ND));
         p_tail = p_tail->p_next;
         p_tail->number = input;
         p_tail->p_next = NULL;
@@ -39,7 +39,7 @@ void main() {
     temp = p_head;
     while(temp != NULL) {
         if(temp->number == value) {
-            temp2 = (NODE*)malloc(sizeof(NODE));
+            temp2 = (ND*)malloc(sizeof(ND));
             temp2->number = input;
             temp2->p_next = temp->p_next ;
             temp->p_next = temp2;
